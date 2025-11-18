@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">New Product - 51Talk Academy</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- i18n Enhanced Script -->
+    <script src="./assets/js/i18n-final-enhanced.js"></script>
+
+    <script>
+        // Tailwind Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#26B7FF',
+                        accent: '#FDE700',
+                        'text-primary': '#333333',
+                        'text-secondary': '#666666',
+                        'bg-light': '#F6F6F6'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    },
+                    borderRadius: {
+                        'button': '50px',
+                        'card': '20px'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Font variables - will be set by i18n script */
+        :root {
+            --font-family: 'Poppins', 'sans-serif';
+        }
+
+        body {
+            font-family: var(--font-family);
+        }
+
+        /* RTL Support Styles */
+        [dir="rtl"] {
+            --font-family: 'Noto Sans Arabic', system-ui, sans-serif;
+        }
+
+        [dir="rtl"] .text-left {
+            text-align: right;
+        }
+
+        [dir="rtl"] .text-right {
+            text-align: left;
+        }
+
+        [dir="rtl"] .float-left {
+            float: right;
+        }
+
+        [dir="rtl"] .float-right {
+            float: left;
+        }
+
+        [dir="rtl"] .ml-4 {
+            margin-right: 1rem;
+            margin-left: 0;
+        }
+
+        [dir="rtl"] .mr-4 {
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .loaded {
+            opacity: 1;
+        }
+
+        /* Language Selector Styles */
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        [dir="rtl"] .language-selector {
+            right: auto;
+            left: 20px;
+        }
+
+        .language-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .language-btn.active {
+            background: #26B7FF;
+            color: white;
+        }
+
+        .language-btn:hover:not(.active) {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body class="loading">
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn" data-lang="zh">中文</button>
+        <button class="language-btn" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="ar">العربية</button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero bg-gradient-to-br from-primary to-blue-600 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6" data-i18n="hero.title">
+                    New Product Title
+                </h1>
+                <p class="text-xl md:text-2xl mb-8" data-i18n="hero.subtitle">
+                    New product subtitle goes here
+                </p>
+                <button class="bg-accent text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105" data-i18n="hero.cta">
+                    Get Started
+                </button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12" data-i18n="features.title">
+                    Features
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" data-i18n="features.feature1.title">
+                            Feature 1
+                        </h3>
+                        <p class="text-gray-600" data-i18n="features.feature1.description">
+                            Description for feature 1
+                        </p>
+                    </div>
+
+                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" data-i18n="features.feature2.title">
+                            Feature 2
+                        </h3>
+                        <p class="text-gray-600" data-i18n="features.feature2.description">
+                            Description for feature 2
+                        </p>
+                    </div>
+
+                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl">3</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" data-i18n="features.feature3.title">
+                            Feature 3
+                        </h3>
+                        <p class="text-gray-600" data-i18n="features.feature3.description">
+                            Description for feature 3
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta bg-primary text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-6" data-i18n="cta.title">
+                    Ready to Start?
+                </h2>
+                <p class="text-xl mb-8" data-i18n="cta.subtitle">
+                    Join thousands of students already learning with us
+                </p>
+                <button class="bg-accent text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105" data-i18n="cta.button">
+                    Start Learning Today
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4" data-i18n="footer.copyright">
+                © 2024 51Talk Academy. All rights reserved.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.privacy">
+                    Privacy Policy
+                </a>
+                <a href="#" class="hover:text-primary transition-colors" data-i18n="footer.terms">
+                    Terms of Service
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loaded class for fade-in effect
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
