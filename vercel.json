@@ -3,21 +3,10 @@
   "builds": [
     {
       "src": "public/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/(.*\\.(html|css|js|json|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1.html"
+      "use": "@vercel/static",
+      "config": {
+        "distDir": "public"
+      }
     }
   ]
 }
