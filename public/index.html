@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>51Talk - {{product_name}}</title>
+
+    <!-- Google Fonts: Poppins & Noto Sans SC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#26B7FF',      // Primary Blue
+                        accent: '#FDE700',       // Accent Yellow
+                        dark: '#333333',         // Text Color
+                        graybg: '#F6F6F6',       // Background Gray
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Noto Sans SC', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 12px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F6F6F6;
+            color: #333333;
+        }
+    </style>
+<link rel="stylesheet" href="index.css">
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        51
+                    </div>
+                    <span class="ml-3 text-xl font-semibold text-dark">{{product_name}}</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-500 hover:text-primary transition-colors">Features</a>
+                    <a href="#benefits" class="text-gray-500 hover:text-primary transition-colors">Benefits</a>
+                    <a href="#testimonials" class="text-gray-500 hover:text-primary transition-colors">Success Stories</a>
+                    <a href="#pricing" class="text-gray-500 hover:text-primary transition-colors">Pricing</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="flex items-center space-x-4">
+                    <button class="bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-400 transition-colors">
+                        Start Free Trial
+                    </button>
+                    <button class="md:hidden text-gray-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-primary to-blue-500 text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                            Master English with {{product_name}}
+                        </h1>
+                        <p class="text-xl mb-8 text-blue-100">
+                            {{main_headline}}
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-colors">
+                                Get Started Free
+                            </button>
+                            <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition-colors">
+                                Watch Demo
+                            </button>
+                        </div>
+                        <div class="mt-8 flex items-center gap-6">
+                            <div class="flex -space-x-2">
+                                <img class="w-10 h-10 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80" alt="User">
+                                <img class="w-10 h-10 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80" alt="User">
+                                <img class="w-10 h-10 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80" alt="User">
+                            </div>
+                            <div>
+                                <div class="flex text-yellow-300">
+                                    ★★★★★
+                                </div>
+                                <p class="text-sm text-blue-100">Join 50,000+ successful learners</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img class="rounded-2xl shadow-2xl" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80" alt="Online Learning">
+                        <div class="absolute -bottom-6 -left-6 bg-white text-gray-800 p-4 rounded-xl shadow-lg max-w-xs">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold">
+                                    95%
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Success Rate</p>
+                                    <p class="text-sm text-gray-500">Students achieve fluency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">
+                        Why Choose {{product_name}}?
+                    </h2>
+                    <p class="text-xl text-gray-500">
+                        {{features_intro}}
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-card text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            🎯
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">Personalized Learning</h3>
+                        <p class="text-gray-500">
+                            Customized lesson plans tailored to your specific goals and learning style.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-card text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            👥
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">Expert Teachers</h3>
+                        <p class="text-gray-500">
+                            Learn from certified native speakers with years of teaching experience.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-card text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            📈
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">Proven Results</h3>
+                        <p class="text-gray-500">
+                            Join thousands of students who have achieved their English learning goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">
+                            Transform Your English Skills
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 flex-shrink-0">
+                                    ✓
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-dark mb-2">Boost Confidence</h3>
+                                    <p class="text-gray-500">{{benefit_1}}</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 flex-shrink-0">
+                                    ✓
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-dark mb-2">Flexible Schedule</h3>
+                                    <p class="text-gray-500">{{benefit_2}}</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 flex-shrink-0">
+                                    ✓
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-dark mb-2">Real-world Practice</h3>
+                                    <p class="text-gray-500">{{benefit_3}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img class="rounded-2xl shadow-xl" src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80" alt="Student Learning">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">
+                        Success Stories
+                    </h2>
+                    <p class="text-xl text-gray-500">
+                        Hear from our successful students
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-card">
+                        <div class="flex text-yellow-400 mb-4">
+                            ★★★★★
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            "{{testimonial_1}}"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80" alt="Student">
+                            <div>
+                                <p class="font-semibold">{{student_name_1}}</p>
+                                <p class="text-sm text-gray-500">{{student_details_1}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-card">
+                        <div class="flex text-yellow-400 mb-4">
+                            ★★★★★
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            "{{testimonial_2}}"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80" alt="Student">
+                            <div>
+                                <p class="font-semibold">{{student_name_2}}</p>
+                                <p class="text-sm text-gray-500">{{student_details_2}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-card">
+                        <div class="flex text-yellow-400 mb-4">
+                            ★★★★★
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            "{{testimonial_3}}"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80" alt="Student">
+                            <div>
+                                <p class="font-semibold">{{student_name_3}}</p>
+                                <p class="text-sm text-gray-500">{{student_details_3}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">
+                        Simple, Transparent Pricing
+                    </h2>
+                    <p class="text-xl text-gray-500">
+                        Choose the plan that works best for you
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-primary transition-colors">
+                        <h3 class="text-xl font-semibold text-dark mb-4">Starter</h3>
+                        <div class="text-3xl font-bold text-dark mb-4">
+                            $29<span class="text-lg text-gray-500">/month</span>
+                        </div>
+                        <p class="text-gray-500 mb-6">Perfect for getting started</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">
+                                    ✓
+                                </div>
+                                <span class="text-gray-600">2 lessons per week</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">
+                                    ✓
+                                </div>
+                                <span class="text-gray-600">25-minute sessions</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">
+                                    ✓
+                                </div>
+                                <span class="text-gray-600">Basic progress tracking</span>
+                            </li>
+                        </ul>
+                        <button class="w-full border-2 border-primary text-primary py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-colors">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <div class="bg-primary text-white rounded-2xl p-8 transform scale-105 shadow-xl">
+                        <div class="bg-accent text-dark text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
+                            Most Popular
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Professional</h3>
+                        <div class="text-3xl font-bold mb-4">
+                            $79<span class="text-lg opacity-80">/month</span>
+                        </div>
+                        <p class="opacity-90 mb-6">Best value for dedicated learners</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-white rounded-full flex items-center justify-center text-primary text-sm">
+                                    ✓
+                                </div>
+                                <span>5 lessons per week</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-white rounded-full flex items-center justify-center text-primary text-sm">
+                                    ✓
+                                </div>
+                                <span>50-minute sessions</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-white rounded-full flex items-center justify-center text-primary text-sm">
+                                    ✓
+                                </div>
+                                <span>Advanced progress tracking</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-white rounded-full flex items-center justify-center text-primary text-sm">
+                                    ✓
+                                </div>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-white text-primary py-3 rounded-full font-semibold hover:bg-gray-50 transition-colors">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-primary transition-colors">
+                        <h3 class="text-xl font-semibold text-dark mb-4">Premium</h3>
+                        <div class="text-3xl font-bold text-dark mb-4">
+                            $149<span class="text-lg text-gray-500">/month</span>
+                        </div>
+                        <p class="text-gray-500 mb-6">For serious learners</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">
+                                    ✓
+                                </div>
+                                <span class="text-gray-600">Unlimited lessons</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">
+                                    ✓
+                                </div>
+                                <span class="text-gray-600">60-minute sessions</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">
+                                    ✓
+                                </div>
+                                <span class="text-gray-600">1-on-1 dedicated tutor</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">
+                                    ✓
+                                </div>
+                                <span class="text-gray-600">Custom learning plan</span>
+                            </li>
+                        </ul>
+                        <button class="w-full border-2 border-primary text-primary py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-colors">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-primary to-blue-500 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Ready to Start Your English Journey?
+                </h2>
+                <p class="text-xl mb-8 text-blue-100">
+                    Join thousands of successful learners today. Start with a free trial lesson.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-colors text-lg">
+                        Start Free Trial
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-colors text-lg">
+                        Schedule Consultation
+                    </button>
+                </div>
+                <p class="mt-6 text-blue-100">
+                    No credit card required • Cancel anytime
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            51
+                        </div>
+                        <span class="ml-3 text-xl font-semibold">{{product_name}}</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Transform your English skills with personalized online learning.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 51Talk {{product_name}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
